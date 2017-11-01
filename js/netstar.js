@@ -22,15 +22,15 @@ Handlebars.registerHelper('rank', function(idx, opt){
     return '<i class="rank-other">'+idx+'</i>';
 });
 
-var olstr ='<style> .chart-list li:first-child img{display:none;} img{width:20px;}.t-2{width:200px}.t-3{width:250px}.chart-list:nth-of-type(4).t-5{width:100px}.t-6{width:120px}@media(max-width:767px){.chart-list.t-4{display:inline-block}}</style>\
-{{#each this}}<ol class="chart-list j-for {{#selected @index}}{{/selected}}">\
+var olstr =
+'{{#each this}}<ol class="chart-list j-for {{#selected @index}}{{/selected}}">\
     {{#with this}}{{#each this}}<li>\
         <span class="t-1">{{#rank this.[0]}}{{/rank}}</span>\
         <span class="t-2"><a href="{{this.[6]}} "title="点击查看：{{this.[1]}} "target="_blank"><img src="{{this.[7]}}"> {{this.[1]}}</a></span>\
         <span class="t-3">{{this.[2]}}</span>\
         <span class="t-4">{{this.[3]}}</span>\
         <span class="t-5 text-center">{{this.[4]}}</span>\
-        <span class="t-1 text-center">{{this.[5]}}</span>\
+        <span class="t-6 text-center">{{this.[5]}}</span>\
     </li>{{/each}}\
 {{/with}}</ol>{{/each}}';
 
